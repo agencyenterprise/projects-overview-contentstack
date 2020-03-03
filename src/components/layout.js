@@ -27,7 +27,14 @@ const Layout = ({ children }) => (
     `}
     render={data => {
       return (
-        <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            backgroundColor: "#F9FAFC",
+          }}
+        >
           <Helmet title={data.site.siteMetadata.title} />
           <Header
             siteTitle={data.site.siteMetadata.title}
@@ -41,6 +48,7 @@ const Layout = ({ children }) => (
               maxWidth: 960,
               padding: "0px 1.0875rem 1.45rem",
               paddingTop: 0,
+              flex: 1,
             }}
           >
             {children}

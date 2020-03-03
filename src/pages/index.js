@@ -9,9 +9,10 @@ export default ({ data }) => {
     <Layout>
       <div
         style={{
-          "text-align": "center",
-          "font-size": "24px",
+          textAlign: "center",
+          fontSize: "24px",
           margin: "35px 0",
+          color: "#555555",
         }}
       >
         {data.contentstackHomePage.message}

@@ -2,12 +2,11 @@ import styled from "styled-components"
 
 export const Card = styled.div`
   position: relative;
-  border: 1px solid #222;
-  border-radius: 3px;
   width: 280px;
   margin: 16px;
   cursor: pointer;
   transition: box-shadow 0.2s ease-in-out;
+  box-shadow: -2px 2px 6px rgba(58, 70, 93, 0.12);
 
   span {
     transition: opacity 0.3s ease;
@@ -15,18 +14,23 @@ export const Card = styled.div`
 
   &:hover {
     transition: box-shadow 0.3s ease-in-out;
-    box-shadow: 5px 5px 10px 0px rgba(112, 112, 112, 0.5);
+    box-shadow: -2px 2px 6px rgba(58, 70, 93, 0.4);
 
     span {
       transition: opacity 0.3s ease;
       opacity: 1;
     }
+
+    .card-image {
+      opacity: 0.6;
+    }
   }
 `
 
 export const CardHeader = styled.div`
-  background-color: #222;
-  color: white;
+  background-color: #fafbfb;
+  font-weight: bold;
+  color: #222;
   padding: 10px;
   font-size: 14px;
   text-align: center;
@@ -35,6 +39,7 @@ export const CardHeader = styled.div`
 
 export const CardContent = styled.div`
   padding: 10px;
+  background-color: white;
 `
 
 export const CardImage = styled.div`
@@ -43,6 +48,7 @@ export const CardImage = styled.div`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 1;
 
   ${({ image }) => image && `background-image: url('${image}');`}
 `
@@ -51,17 +57,19 @@ export const ShortDescription = styled.span`
   opacity: 0;
   position: absolute;
   bottom: 0;
-  height: 40px;
-  background-color: #2222229c;
+  height: 30px;
+  background-color: #fafbfb;
   width: calc(100% - 20px);
   left: 0;
-  color: white;
+  color: #828d99;
   padding: 10px;
+  font-size: 12px;
 `
 
 export const Heads = styled.span`
   position: absolute;
   opacity: 0;
+  z-index: 10;
 `
 
 export const Head = styled.div`
@@ -72,7 +80,7 @@ export const Head = styled.div`
   background-repeat: no-repeat;
   border-radius: 50px;
   margin-left: 5px;
-  border: 1px solid ${({ color }) => (color ? color : "#222")};
+  border: 2px solid ${({ color }) => (color ? color : "#222")};
 
   ${({ image }) => image && `background-image: url('${image}');`}
 `

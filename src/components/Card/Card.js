@@ -57,7 +57,7 @@ const CardComponent = ({ color, data }) => {
             )
           })}
         </Heads>
-        <CardImage image={data.banner.url} />
+        <CardImage className="card-image" image={data.banner.url} />
         <ShortDescription>{data.short_description}</ShortDescription>
       </CardContent>
     </Card>
