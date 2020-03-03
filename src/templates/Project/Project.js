@@ -62,7 +62,7 @@ export default ({ data }) => {
           <Details>
             <Title>Details</Title>
             {keyValues.map(keyValue => (
-              <KeyValue>
+              <KeyValue key={keyValue.key}>
                 <Key>{keyValue.title}:</Key>
                 <Value>{keyValue.value}</Value>
               </KeyValue>
@@ -73,10 +73,10 @@ export default ({ data }) => {
             {roles
               .filter(role => byRole[role].length)
               .map(role => (
-                <Role>
+                <Role key={role}>
                   <h2>{role}</h2>
                   {byRole[role].map(member => (
-                    <Member to={member.url}>
+                    <Member to={member.url} key={member.id}>
                       <MemberPhoto src={member.photo.url} />
                       <MemberName>{member.name}</MemberName>
                     </Member>
@@ -102,6 +102,7 @@ export const pageQuery = graphql`
         role_in_project
         employee {
           name
+          id
           photo {
             url
           }

@@ -45,7 +45,7 @@ const LayoutComponent = ({ children }) => (
 )
 
 LayoutComponent.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.any,
 }
 
 export { LayoutComponent as Layout }

@@ -25,8 +25,6 @@ exports.createPages = ({ actions, graphql }) => {
     projects.forEach(edge => {
       const id = edge.node.id
 
-      console.log("id", id)
-
       createPage({
         path: edge.node.url,
         component: path.resolve(`src/templates/Project/Project.js`),

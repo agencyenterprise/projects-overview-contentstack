@@ -6,18 +6,14 @@ import { Cards, Welcome } from "./_index.styled"
 import { Link } from "gatsby"
 
 export default ({ data }) => {
-  const cardsMultiplied = [
-    ...data.allContentstackProjects.edges,
-    ...data.allContentstackProjects.edges,
-    ...data.allContentstackProjects.edges,
-  ]
+  const cards = data.allContentstackProjects.edges
 
   return (
     <Layout>
       <Welcome>{data.contentstackHomePage.message}</Welcome>
       <Cards>
-        {cardsMultiplied.map(edge => (
-          <Link to={edge.node.url}>
+        {cards.map(edge => (
+          <Link key={edge.node.id} to={edge.node.url}>
             <Card color={data.contentstackHeader.color} data={edge.node} />
           </Link>
         ))}
@@ -31,6 +27,7 @@ export const pageQuery = graphql`
     allContentstackProjects {
       edges {
         node {
+          id
           name
           notes
           title
