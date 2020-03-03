@@ -10,7 +10,7 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  min-height: 262px;
+  height: 262px;
 
   span {
     transition: opacity 0.3s ease;
@@ -35,7 +35,8 @@ export const CardHeader = styled.div`
   background-color: #fafbfb;
   font-weight: bold;
   color: #222;
-  padding: 15px 5px;
+  padding: 15px 10px;
+  line-height: 14px;
   font-size: 12px;
   text-align: center;
   text-transform: uppercase;

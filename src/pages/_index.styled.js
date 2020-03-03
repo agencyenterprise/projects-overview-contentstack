@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Welcome = styled.div`
   text-align: center;
   font-size: 24px;
-  margin: 35px 0;
+  margin-bottom: 35px;
   color: #555;
 `
 

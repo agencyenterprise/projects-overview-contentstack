@@ -3,24 +3,19 @@ import { graphql } from "gatsby"
 import { Markdown } from "../../components/Markdown"
 
 import { Layout } from "../../components/Layout"
+import { Project, Box } from "./project.styled"
 
 export default ({ data }) => {
   const project = data.contentstackProjects
 
   return (
     <Layout>
-      <div className="container">
-        <div>
-          <section>
-            <div className="blog-title">
-              <h2>{project.name}</h2>
-            </div>
-            <div className="blog-description">
-              <Markdown content={project.description} />
-            </div>
-          </section>
-        </div>
-      </div>
+      <Project>
+        <Box>
+          <h2>{project.name}</h2>
+          <Markdown content={project.description} />
+        </Box>
+      </Project>
     </Layout>
   )
 }
