@@ -7,21 +7,23 @@ import {
   Box,
   Details,
   DetailsContainer,
+  Key,
+  KeyValue,
+  Member,
+  MemberName,
+  MemberPhoto,
   Name,
   Project,
+  Role,
+  RoleName,
   ShortDescription,
   Title,
-  KeyValue,
-  Key,
   Value,
-  Role,
-  Member,
-  MemberPhoto,
-  MemberName,
 } from "./project.styled"
 
 export default ({ data }) => {
   const project = data.contentstackProjects
+  const meta = data.contentstackMeta
 
   const keys = ["title", "client", "acceptance_url", "production_url", "notes"]
 
@@ -74,7 +76,7 @@ export default ({ data }) => {
               .filter(role => byRole[role].length)
               .map(role => (
                 <Role key={role}>
-                  <h2>{role}</h2>
+                  <RoleName color={meta.color}>{role}</RoleName>
                   {byRole[role].map(member => (
                     <Member to={member.url} key={member.id}>
                       <MemberPhoto src={member.photo.url} />
@@ -119,6 +121,9 @@ export const pageQuery = graphql`
       banner {
         url
       }
+    }
+    contentstackMeta {
+      color
     }
   }
 `

@@ -6,17 +6,26 @@ import { Cards, Welcome } from "./_index.styled"
 import { Link } from "gatsby"
 
 export default ({ data }) => {
-  const cards = data.allContentstackProjects.edges
+  const {
+    allContentstackProjects,
+    contentstackMeta,
+    contentstackHomePage,
+  } = data
+  const { edges } = allContentstackProjects
 
   return (
     <Layout>
-      <Welcome>{data.contentstackHomePage.message}</Welcome>
+      <Welcome>{contentstackHomePage.message}</Welcome>
       <Cards>
-        {cards.map(edge => (
-          <Link key={edge.node.id} to={edge.node.url}>
-            <Card color={data.contentstackHeader.color} data={edge.node} />
-          </Link>
-        ))}
+        {edges.map(edge => {
+          const card = edge.node
+
+          return (
+            <Link key={card.id} to={card.url}>
+              <Card color={contentstackMeta.color} data={card} />
+            </Link>
+          )
+        })}
       </Cards>
     </Layout>
   )
@@ -53,7 +62,7 @@ export const pageQuery = graphql`
     contentstackHomePage {
       message
     }
-    contentstackHeader {
+    contentstackMeta {
       color
     }
   }

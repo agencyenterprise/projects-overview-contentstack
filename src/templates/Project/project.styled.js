@@ -77,15 +77,14 @@ export const Value = styled.div`
   flex: 1;
 `
 
-export const Role = styled.div`
-  h2 {
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 15px 0;
-    color: #222;
-  }
+export const Role = styled.div``
+export const RoleName = styled.h2`
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 15px 0;
+  color: ${({ color }) => color || `#222`};
 `
 
 export const Member = styled(Link)`

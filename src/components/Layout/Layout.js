@@ -18,24 +18,27 @@ const LayoutComponent = ({ children }) => (
             title
           }
         }
-        contentstackHeader {
-          title
+        contentstackMeta {
           color
-          logo {
+          company_name
+          small_logo {
             url
           }
         }
       }
     `}
     render={data => {
+      const staticMeta = data.site.siteMetadata
+      const meta = data.contentstackMeta
+
       return (
         <Layout>
-          <Helmet title={data.site.siteMetadata.title} />
+          <Helmet title={staticMeta.title} />
           <Header
-            siteTitle={data.site.siteMetadata.title}
-            company={data.contentstackHeader.title}
-            color={data.contentstackHeader.color}
-            logo={data.contentstackHeader.logo.url}
+            siteTitle={staticMeta.title}
+            company={meta.company_name}
+            color={meta.color}
+            logo={meta.small_logo.url}
           />
           <Content>{children}</Content>
         </Layout>
