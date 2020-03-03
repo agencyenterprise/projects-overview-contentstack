@@ -11,6 +11,7 @@ import {
   Role,
   ShortDescription,
 } from "./card.styled"
+import placeholder from "./placeholder.png"
 
 const roleIcon = {
   "Product Manager": faTasks,
@@ -35,7 +36,7 @@ const CardComponent = ({ color, data }) => {
     })
   })
 
-  const banner = data.banner && data.banner.url
+  const banner = (data.banner && data.banner.url) || placeholder
 
   return (
     <Card>
@@ -59,7 +60,7 @@ const CardComponent = ({ color, data }) => {
             )
           })}
         </Heads>
-        {banner && <CardImage className="card-image" image={banner} />}
+        <CardImage className="card-image" image={banner} />
         <ShortDescription>{data.short_description}</ShortDescription>
       </CardContent>
     </Card>

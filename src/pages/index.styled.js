@@ -11,4 +11,8 @@ export const Cards = styled.div`
   margin: 20px 0;
   display: flex;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 1090px) {
+    justify-content: center;
+  }
 `
