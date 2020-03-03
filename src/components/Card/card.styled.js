@@ -70,6 +70,7 @@ export const ShortDescription = styled.span`
   color: #828d99;
   padding: 10px;
   font-size: 12px;
+  line-height: 16px;
 `
 
 export const Heads = styled.span`
