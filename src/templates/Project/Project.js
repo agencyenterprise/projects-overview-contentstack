@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Markdown } from "../../components/Markdown"
 
-import { Layout } from "../../components/layout"
+import { Layout } from "../../components/Layout"
 
 export default ({ data }) => {
   const project = data.contentstackProjects

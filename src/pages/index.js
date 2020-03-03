@@ -1,8 +1,8 @@
 import { graphql } from "gatsby"
 import React from "react"
 import { Card } from "../components/Card"
-import { Layout } from "../components/layout"
-import { Cards, Welcome } from "./_index.styledd"
+import { Layout } from "../components/Layout"
+import { Cards, Welcome } from "./_index.styled"
 import { Link } from "gatsby"
 
 export default ({ data }) => {
