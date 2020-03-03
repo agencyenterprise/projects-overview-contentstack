@@ -1,27 +1,24 @@
-import React from "react"
 import { graphql } from "gatsby"
+import React from "react"
 import { Card } from "../components/Card"
-
-import Layout from "../components/layout"
+import { Layout } from "../components/layout"
+import { Cards, Welcome } from "./index.styled"
 
 export default ({ data }) => {
+  const cardsMultiplied = [
+    ...data.allContentstackProjects.edges,
+    ...data.allContentstackProjects.edges,
+    ...data.allContentstackProjects.edges,
+  ]
+
   return (
     <Layout>
-      <div
-        style={{
-          textAlign: "center",
-          fontSize: "24px",
-          margin: "35px 0",
-          color: "#555555",
-        }}
-      >
-        {data.contentstackHomePage.message}
-      </div>
-      <div style={{ margin: "20px -16px", display: "flex" }}>
-        {data.allContentstackProjects.edges.map(edge => (
+      <Welcome>{data.contentstackHomePage.message}</Welcome>
+      <Cards>
+        {cardsMultiplied.map(edge => (
           <Card color={data.contentstackHeader.color} data={edge.node} />
         ))}
-      </div>
+      </Cards>
     </Layout>
   )
 }

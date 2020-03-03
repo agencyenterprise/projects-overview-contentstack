@@ -1,40 +1,39 @@
-// const path = require('path');
+const path = require("path")
 
-// exports.createPages = ({ actions, graphql }) => {
-//   const { createPage } = actions
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
-//   return graphql(`
-//     {
-//       allContentstackBlogs(limit: 1000) {
-//         edges {
-//           node {
-//           	id
-//             url
-//           }
-//         }
-//       }
-//     }
-//   `).then(result => {
-//     if (result.errors) {
-//       result.errors.forEach(e => console.error(e.toString()))
-//       return Promise.reject(result.errors)
-//     }
+  return graphql(`
+    {
+      allContentstackProjects(limit: 1000) {
+        edges {
+          node {
+            id
+            url
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      result.errors.forEach(e => console.error(e.toString()))
+      return Promise.reject(result.errors)
+    }
 
-//     const blogs = result.data.allContentstackBlogs.edges
+    const projects = result.data.allContentstackProjects.edges
 
-//     blogs.forEach(edge => {
-//       const id = edge.node.id
-//       createPage({
-//         path: edge.node.url,
-//         component: path.resolve(
-//           `src/components/blog.js`
-//         ),
-//         // additional data can be passed via context
-//         context: {
-//           id,
-//         },
-//       })
-//     })
+    projects.forEach(edge => {
+      const id = edge.node.id
 
-//   })
-// }
+      console.log("id", id)
+
+      createPage({
+        path: edge.node.url,
+        component: path.resolve(`src/templates/Project/Project.js`),
+        context: {
+          id,
+        },
+      })
+    })
+  })
+}

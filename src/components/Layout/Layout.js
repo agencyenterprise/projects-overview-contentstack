@@ -1,13 +1,15 @@
-import React from "react"
+import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
+import React from "react"
 import Helmet from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
+import { Header } from "../Header"
+import { Content, Layout } from "./layout.styled"
 
-import { Header } from "./Header"
-import "../styles/reset.css"
-import "../styles/index.css"
+// reset should come before index, be careful with auto-organization
+import "../../styles/reset.css"
+import "../../styles/index.css"
 
-const Layout = ({ children }) => (
+const LayoutComponent = ({ children }) => (
   <StaticQuery
     query={graphql`
       query headerQueryAndLayoutQuery {
@@ -27,14 +29,7 @@ const Layout = ({ children }) => (
     `}
     render={data => {
       return (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            backgroundColor: "#F9FAFC",
-          }}
-        >
+        <Layout>
           <Helmet title={data.site.siteMetadata.title} />
           <Header
             siteTitle={data.site.siteMetadata.title}
@@ -42,25 +37,15 @@ const Layout = ({ children }) => (
             color={data.contentstackHeader.color}
             logo={data.contentstackHeader.logo.url}
           />
-          <div
-            style={{
-              margin: "0 auto",
-              maxWidth: 960,
-              padding: "0px 1.0875rem 1.45rem",
-              paddingTop: 0,
-              flex: 1,
-            }}
-          >
-            {children}
-          </div>
-        </div>
+          <Content>{children}</Content>
+        </Layout>
       )
     }}
   />
 )
 
-Layout.propTypes = {
+LayoutComponent.propTypes = {
   children: PropTypes.object,
 }
 
-export default Layout
+export { LayoutComponent as Layout }

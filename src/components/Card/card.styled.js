@@ -2,11 +2,15 @@ import styled from "styled-components"
 
 export const Card = styled.div`
   position: relative;
-  width: 280px;
+  width: 240.5px;
   margin: 16px;
   cursor: pointer;
   transition: box-shadow 0.2s ease-in-out;
   box-shadow: -2px 2px 6px rgba(58, 70, 93, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 262px;
 
   span {
     transition: opacity 0.3s ease;
@@ -31,8 +35,8 @@ export const CardHeader = styled.div`
   background-color: #fafbfb;
   font-weight: bold;
   color: #222;
-  padding: 10px;
-  font-size: 14px;
+  padding: 15px 5px;
+  font-size: 12px;
   text-align: center;
   text-transform: uppercase;
 `
@@ -40,6 +44,7 @@ export const CardHeader = styled.div`
 export const CardContent = styled.div`
   padding: 10px;
   background-color: white;
+  flex: 1;
 `
 
 export const CardImage = styled.div`
