@@ -26,8 +26,6 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => {
-      console.log("layoutdata", data)
-
       return (
         <div>
           <Helmet title={data.site.siteMetadata.title} />

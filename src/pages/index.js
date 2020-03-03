@@ -5,7 +5,6 @@ import { Card } from "../components/Card"
 import Layout from "../components/layout"
 
 export default ({ data }) => {
-  console.log("data", data)
   return (
     <Layout>
       <div
@@ -19,7 +18,7 @@ export default ({ data }) => {
       </div>
       <div style={{ margin: "20px -16px", display: "flex" }}>
         {data.allContentstackProjects.edges.map(edge => (
-          <Card data={edge.node} />
+          <Card color={data.contentstackHeader.color} data={edge.node} />
         ))}
       </div>
     </Layout>
@@ -54,6 +53,9 @@ export const pageQuery = graphql`
     }
     contentstackHomePage {
       message
+    }
+    contentstackHeader {
+      color
     }
   }
 `

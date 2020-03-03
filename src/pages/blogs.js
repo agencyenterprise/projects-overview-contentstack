@@ -4,9 +4,8 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 
 const IndexPage = ({ data }) => {
-  console.log("data", data)
   const blogs = data.allContentstackBlogs.edges
-  console.log("blogs", blogs)
+
   return (
     <Layout>
       <div className="container">
