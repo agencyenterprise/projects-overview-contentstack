@@ -9,9 +9,9 @@ export const Layout = styled.div`
 
 export const Content = styled.div`
   max-width: 1090px;
-  width: 100%;
+  width: calc(100% - 32px);
   flex: 1;
   margin: 0 auto;
   flex-wrap: wrap;
-  padding: 35px 0;
+  padding: 35px 16px;
 `
