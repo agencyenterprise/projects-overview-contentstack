@@ -1,18 +1,23 @@
-import React from "react"
 import { graphql } from "gatsby"
-import { Markdown } from "../../components/Markdown"
-
+import React from "react"
 import { Layout } from "../../components/Layout"
-import { Project, Box } from "./project.styled"
+import { Markdown } from "../../components/Markdown"
+import { Banner, Box, Name, Project, ShortDescription } from "./project.styled"
 
 export default ({ data }) => {
   const project = data.contentstackProjects
 
+  console.log(project)
+
   return (
     <Layout>
       <Project>
+        {project.banner && (
+          <Banner src={project.banner.url} alt={project.name} />
+        )}
+        <Name>{project.name}</Name>
+        <ShortDescription>{project.short_description}</ShortDescription>
         <Box>
-          <h2>{project.name}</h2>
           <Markdown content={project.description} />
         </Box>
       </Project>
