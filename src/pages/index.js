@@ -2,7 +2,8 @@ import { graphql } from "gatsby"
 import React from "react"
 import { Card } from "../components/Card"
 import { Layout } from "../components/layout"
-import { Cards, Welcome } from "./index.styled"
+import { Cards, Welcome } from "./_index.styledd"
+import { Link } from "gatsby"
 
 export default ({ data }) => {
   const cardsMultiplied = [
@@ -16,7 +17,9 @@ export default ({ data }) => {
       <Welcome>{data.contentstackHomePage.message}</Welcome>
       <Cards>
         {cardsMultiplied.map(edge => (
-          <Card color={data.contentstackHeader.color} data={edge.node} />
+          <Link to={edge.node.path}>
+            <Card color={data.contentstackHeader.color} data={edge.node} />
+          </Link>
         ))}
       </Cards>
     </Layout>
