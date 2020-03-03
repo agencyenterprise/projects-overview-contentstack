@@ -1,9 +1,17 @@
 import React from "react"
-import { Card } from "./card.styled"
+import { Card, CardContent, CardHeader, CardImage } from "./card.styled"
 
 const CardComponent = ({ data }) => {
-  console.log("data", data)
-  return <Card>{data.name}</Card>
+  console.log(data)
+
+  return (
+    <Card>
+      <CardHeader>{data.name}</CardHeader>
+      <CardContent>
+        <CardImage image={data.banner.url} />
+      </CardContent>
+    </Card>
+  )
 }
 
 export { CardComponent as Card }

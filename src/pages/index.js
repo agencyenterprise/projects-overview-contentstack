@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import renderHTML from "react-render-html"
 import { Card } from "../components/Card"
 
 import Layout from "../components/layout"
@@ -9,9 +8,11 @@ export default ({ data }) => {
   console.log("data", data)
   return (
     <Layout>
-      {data.allContentstackProjects.edges.map(edge => (
-        <Card data={edge.node} />
-      ))}
+      <div style={{ margin: "20px -16px", display: "flex" }}>
+        {data.allContentstackProjects.edges.map(edge => (
+          <Card data={edge.node} />
+        ))}
+      </div>
     </Layout>
   )
 }
