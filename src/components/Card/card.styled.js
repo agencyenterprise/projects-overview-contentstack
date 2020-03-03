@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const Card = styled.div`
+  position: relative;
   border: 1px solid #222;
   border-radius: 3px;
   width: 280px;
@@ -11,6 +12,11 @@ export const Card = styled.div`
   &:hover {
     transition: box-shadow 0.3s ease-in-out;
     box-shadow: 5px 5px 10px 0px rgba(112, 112, 112, 0.5);
+
+    span {
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+    }
   }
 `
 
@@ -35,4 +41,17 @@ export const CardImage = styled.div`
   background-repeat: no-repeat;
 
   ${({ image }) => image && `background-image: url('${image}');`}
+`
+
+export const ShortDescription = styled.span`
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  background-color: #2222229c;
+  width: calc(100% - 20px);
+  left: 0;
+  color: white;
+  padding: 10px;
+  transition: opacity 0.3s ease-in-out;
 `

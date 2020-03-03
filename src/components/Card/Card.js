@@ -1,5 +1,11 @@
 import React from "react"
-import { Card, CardContent, CardHeader, CardImage } from "./card.styled"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardImage,
+  ShortDescription,
+} from "./card.styled"
 
 const CardComponent = ({ data }) => {
   console.log(data)
@@ -9,6 +15,7 @@ const CardComponent = ({ data }) => {
       <CardHeader>{data.name}</CardHeader>
       <CardContent>
         <CardImage image={data.banner.url} />
+        <ShortDescription>{data.short_description}</ShortDescription>
       </CardContent>
     </Card>
   )
