@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 export const Project = styled.div`
   display: flex;
@@ -53,7 +54,7 @@ export const Details = styled(Box)`
 export const Title = styled.div`
   font-weight: bold;
   margin-bottom: 25px;
-  font-size: 18px;
+  font-size: 20px;
 `
 
 export const KeyValue = styled.div`
@@ -61,7 +62,7 @@ export const KeyValue = styled.div`
   font-size: 14px;
   margin-bottom: 7px;
   color: #222;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.4px;
   line-height: 16px;
 `
 
@@ -74,4 +75,36 @@ export const Key = styled.div`
 
 export const Value = styled.div`
   flex: 1;
+`
+
+export const Role = styled.div`
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 15px 0;
+    color: #222;
+  }
+`
+
+export const Member = styled(Link)`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #222;
+  margin-left: 15px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`
+
+export const MemberName = styled.div``
+
+export const MemberPhoto = styled.img`
+  border-radius: 7px;
+  width: 30px;
+  margin-right: 10px;
 `
