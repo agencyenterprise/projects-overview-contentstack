@@ -17,7 +17,7 @@ export default ({ data }) => {
       <Welcome>{data.contentstackHomePage.message}</Welcome>
       <Cards>
         {cardsMultiplied.map(edge => (
-          <Link to={edge.node.path}>
+          <Link to={edge.node.url}>
             <Card color={data.contentstackHeader.color} data={edge.node} />
           </Link>
         ))}
@@ -34,6 +34,7 @@ export const pageQuery = graphql`
           name
           notes
           title
+          url
           team_member {
             role_in_project
             employee {
