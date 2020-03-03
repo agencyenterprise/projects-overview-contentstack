@@ -1,8 +1,8 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import renderHTML from 'react-render-html'
+import React from "react"
+import { graphql } from "gatsby"
+import renderHTML from "react-render-html"
 
-import Layout from './layout'
+import Layout from "./layout"
 
 const BlogPage = ({ data }) => {
   const blog = data.contentstackBlogs
@@ -17,12 +17,7 @@ const BlogPage = ({ data }) => {
             <div className="blog-description">
               {renderHTML(blog.description)}
             </div>
-            <div className="author">
-              By:{' '}
-              {blog.authors.map(author => {
-                return <span key={author.id}>{author.name}</span>
-              })}
-            </div>
+            <div className="author">By: </div>
           </section>
         </div>
       </div>
@@ -39,10 +34,6 @@ export const pageQuery = graphql`
       id
       url
       description
-      authors {
-        id
-        name
-      }
     }
   }
 `

@@ -45,10 +45,6 @@ export const pageQuery = graphql`
           url
           title
           short_title
-          authors {
-            name
-            id
-          }
         }
       }
     }
