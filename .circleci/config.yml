@@ -13,7 +13,7 @@ jobs:
             - run: npm build
   deploy:
     docker:
-      - image: circleci/node@1.1.6
+      - image: circleci/node:chakracore-10.13
     steps:
       - checkout
       - run:
