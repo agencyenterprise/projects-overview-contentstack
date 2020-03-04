@@ -1,26 +1,62 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 export const Header = styled.div`
   display: flex;
   background-color: #fff;
-  align-items: center;
-  justify-content: center;
   color: #222;
-  padding: 10px;
 
   p {
-    font-size: 17px;
-    margin: 0 15px;
+    font-size: 14px;
+    margin: 0 10px;
+
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+  }
+`
+
+export const HeaderContent = styled.div`
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 10px;
+  max-width: 1090px;
+  width: calc(100% - 32px);
+  margin: 0 auto;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    align-items: center;
+    margin: 0 16px;
   }
 `
 
 export const Logo = styled.img`
   max-height: 35px;
   max-width: 80px;
-  margin-right: 15px;
+  margin-right: 10px;
 `
 
 export const Divide = styled.span`
   font-weight: bold;
   ${({ color }) => color && `color: ${color};`}
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+`
+
+export const MenuItem = styled(Link)`
+  text-decoration: none;
+  color: #222;
+  margin-left: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `

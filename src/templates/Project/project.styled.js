@@ -29,15 +29,14 @@ export const ShortDescription = styled.div`
   font-size: 16px;
   line-height: 20px;
   font-style: italic;
-  margin-bottom: 35px;
+  margin-bottom: 55px;
   color: #555;
 `
 
 export const Banner = styled.img`
   width: 100%;
   max-width: 600px;
-  max-height: 450px;
-  margin: 0 auto 25px;
+  margin: 0 auto 45px;
 `
 
 export const DetailsContainer = styled.div`
