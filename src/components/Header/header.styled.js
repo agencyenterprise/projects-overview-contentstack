@@ -68,3 +68,10 @@ export const MenuItem = styled(Link)`
     color: ${({ color }) => color};
   }
 `
+
+export const BlankLink = styled(Link)`
+  align-items: center;
+  color: #222;
+  text-decoration: none;
+  display: flex;
+`

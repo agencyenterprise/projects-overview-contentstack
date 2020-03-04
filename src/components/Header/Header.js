@@ -1,12 +1,21 @@
 import React from "react"
-import { Divide, Header, HeaderContent, Logo, MenuItem } from "./header.styled"
+import {
+  Divide,
+  Header,
+  HeaderContent,
+  Logo,
+  MenuItem,
+  BlankLink,
+} from "./header.styled"
 
 const HeaderComponent = ({ siteTitle, company, logo, color }) => (
   <Header>
     <HeaderContent>
       <div>
-        <Logo src={logo} />
-        <p>{company}</p> <Divide color={color}>\</Divide> <p>{siteTitle}</p>
+        <BlankLink to="/">
+          <Logo src={logo} />
+          <p>{company}</p> <Divide color={color}>\</Divide> <p>{siteTitle}</p>
+        </BlankLink>
       </div>
       <div>
         <MenuItem to="/" activeClassName="active" color={color}>
