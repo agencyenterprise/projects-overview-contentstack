@@ -55,8 +55,16 @@ export const MenuItem = styled(Link)`
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-size: 14px;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
 
   &:hover {
     opacity: 0.8;
+  }
+
+  &.active {
+    font-weight: 900;
+    border-color: ${({ color }) => color};
+    color: ${({ color }) => color};
   }
 `

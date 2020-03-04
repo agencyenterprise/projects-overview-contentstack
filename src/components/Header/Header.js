@@ -9,8 +9,12 @@ const HeaderComponent = ({ siteTitle, company, logo, color }) => (
         <p>{company}</p> <Divide color={color}>\</Divide> <p>{siteTitle}</p>
       </div>
       <div>
-        <MenuItem to="/">Projects</MenuItem>
-        <MenuItem to="/">About</MenuItem>
+        <MenuItem to="/" activeClassName="active" color={color}>
+          Projects
+        </MenuItem>
+        <MenuItem to="/about" activeClassName="active" color={color}>
+          About
+        </MenuItem>
       </div>
     </HeaderContent>
   </Header>

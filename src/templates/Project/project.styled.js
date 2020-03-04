@@ -35,7 +35,7 @@ export const ShortDescription = styled.div`
 
 export const Banner = styled.img`
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto 45px;
 `
 
