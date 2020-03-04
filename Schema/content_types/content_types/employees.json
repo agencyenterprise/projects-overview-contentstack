@@ -87,7 +87,14 @@
       "non_localizable": false
     }
   ],
-  "last_activity": {},
+  "last_activity": {
+    "environments": [
+      {
+        "uid": "blte328ce67fa088fea",
+        "details": [{ "locale": "en-us", "time": "2020-03-03T19:40:16.226Z" }]
+      }
+    ]
+  },
   "maintain_revisions": true,
   "description": "",
   "DEFAULT_ACL": [
