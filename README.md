@@ -1,6 +1,6 @@
 ## Contentstack POC
 
-**What is this**: This is a POC that uses [Contentstack](<(https://www.contentstack.com/docs)>) and builds off the [Contentstack-Gatsby Static Site Demo](https://github.com/contentstack/gatsby-contentstack-demo) to test out how Contentstack could be used to make a user facing site for an agency.
+This is a POC that uses [Contentstack](<(https://www.contentstack.com/docs)>) and builds off the [Contentstack-Gatsby Static Site Demo](https://github.com/contentstack/gatsby-contentstack-demo) to test out how Contentstack could be used to make a user facing site for an agency.
 
 This is not meant to be a real, ready for production application, but just a quick implementation using the Contentstack trial to play around with some features. As you can hopefully tell, much of the content is made up.
 
