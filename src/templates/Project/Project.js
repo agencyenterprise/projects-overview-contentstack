@@ -2,6 +2,7 @@ import { graphql } from "gatsby"
 import React from "react"
 import { Layout } from "../../components/Layout"
 import { Markdown } from "../../components/Markdown"
+import { Video } from "../../components/Video"
 import {
   Banner,
   Box,
@@ -60,6 +61,11 @@ export default ({ data }) => {
         <Box>
           <Markdown content={project.description} />
         </Box>
+        {project.youtube_video && (
+          <Box>
+            <Video videoId={project.youtube_video.videoId} />
+          </Box>
+        )}
         <DetailsContainer>
           <Details>
             <Title>Details</Title>
@@ -100,6 +106,9 @@ export const pageQuery = graphql`
       url
       title
       short_description
+      youtube_video {
+        videoId
+      }
       team_member {
         role_in_project
         employee {
