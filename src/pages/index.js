@@ -1,9 +1,9 @@
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import React from "react"
 import { Card } from "../components/Card"
+import { Featured } from '../components/Featured'
 import { Layout } from "../components/Layout"
-import { Cards, Welcome } from "./_index.styled"
-import { Link } from "gatsby"
+import { Cards } from "./_index.styled"
 
 export default ({ data }) => {
   const {
@@ -15,7 +15,8 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <Welcome>{contentstackHomePage.message}</Welcome>
+      <Featured featured={contentstackHomePage.featured} />
+      {/* <Welcome>{contentstackHomePage.message}</Welcome> */}
       <Cards>
         {edges.map(edge => {
           const card = edge.node
@@ -60,6 +61,26 @@ export const pageQuery = graphql`
       }
     }
     contentstackHomePage {
+      featured {
+        description {
+          rich_text_editor
+        }
+        logo {
+          sponsors {
+            name
+            image_url {
+              href
+              title
+            }
+          }
+        }
+        tags {
+          tag
+        }
+        title {
+          title_text
+        }
+      }
       message
     }
     contentstackMeta {
